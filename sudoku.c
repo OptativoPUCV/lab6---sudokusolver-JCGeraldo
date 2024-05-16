@@ -64,6 +64,7 @@ List* get_adj_nodes(Node* n){
       if (i0 != -1 && j0 != -1) {
          break;
    }
+   }
    //Recorrer los 9 posibles valores para el 0
    if(i0!=-1&&j0!=-1){
       for(int k = 1; k <= 9; k++){
