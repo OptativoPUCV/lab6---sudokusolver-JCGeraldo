@@ -38,3 +38,27 @@ sudoku.c:60:13: error: ‘j0’ undeclared (first use in this function); did you
       |             j
 Compilation failed
 6865ac5
+Thu 16 May 2024 04:29:02 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:55:14: error: redefinition of ‘i0’
+   55 |    int i0=-1,i0=-1;
+      |              ^~
+sudoku.c:55:8: note: previous definition of ‘i0’ with type ‘int’
+   55 |    int i0=-1,i0=-1;
+      |        ^~
+sudoku.c:60:13: error: ‘j0’ undeclared (first use in this function); did you mean ‘j’?
+   60 |             j0 = j;
+      |             ^~
+      |             j
+sudoku.c:60:13: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:66:7: error: ‘x’ undeclared (first use in this function)
+   66 |    if(x!=-1&&y!=-1){
+      |       ^
+sudoku.c:66:14: error: ‘y’ undeclared (first use in this function)
+   66 |    if(x!=-1&&y!=-1){
+      |              ^
+Compilation failed
+2db4c90
