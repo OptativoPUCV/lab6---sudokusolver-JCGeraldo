@@ -85,7 +85,7 @@ int is_validSubmatrices(Node* n){
     int i,j;
     for(int fila =0; fila<9; fila+=3){
         for(int col =0; col<9; col+=3){
-            memset(array, 0, sizeof(array))
+            memset(array, 0, sizeof(array));
             for(i=fila;i<fila+3;i++){
                 for(j=col;j<col+3;j++){
                     if(n->sudo[i][j]!=0){
