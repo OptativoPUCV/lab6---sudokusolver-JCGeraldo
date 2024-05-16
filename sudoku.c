@@ -51,6 +51,24 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
+   //Buscar primer 0 en la matriz
+   int x,y;
+   for(int i = 0; i < 9; i++){
+      for(int j = 0; j < 9; j++){
+         if(n->sudo[i][j] == 0){
+            x = i;
+            y = j;
+            break;
+         }
+      }
+   }
+   //Recorrer los 9 posibles valores para el 0
+   for(int i = 1; i <= 9; i++){
+      Node* adj = copy(n);
+      adj->sudo[x][y] = i;
+      pushBack(list, adj);
+   }
+   
     return list;
 }
 
