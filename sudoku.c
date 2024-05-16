@@ -64,9 +64,9 @@ List* get_adj_nodes(Node* n){
    }
    //Recorrer los 9 posibles valores para el 0
    if(x!=-1&&y!=-1){
-      for(int i = 1; i <= 9; i++){
+      for(int k = 1; k <= 9; k++){
          Node* adj = copy(n);
-         adj->sudo[x][y] = i;
+         adj->sudo[x][y] = k;
          pushBack(list, adj);
       }
    }
