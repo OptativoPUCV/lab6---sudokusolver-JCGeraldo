@@ -57,7 +57,7 @@ int is_validFilas(Node* n){
                 }
             }
         }
-        array= {0,0,0,0,0,0,0,0,0,0};
+        array[10]= {0,0,0,0,0,0,0,0,0,0};
     }
     return 1;
 }
@@ -85,6 +85,8 @@ int is_validSubmatrices(Node* n){
     int array[10]={0,0,0,0,0,0,0,0,0,0};
     int i,j;
     for(i=0;i<9;i++){
+        if(i==3 || i==6)
+            array[10] = {0,0,0,0,0,0,0,0,0,0};
         for(j=0;j<3;j++){
             if(n->sudo[i][j]!=0){
                 if(array[n->sudo[i][j]]!=0)
@@ -93,10 +95,11 @@ int is_validSubmatrices(Node* n){
                     array[n->sudo[i][j]]=1;
                 }
         }
-        if(i==3 || i==6)
-            array = {0,0,0,0,0,0,0,0,0,0};
+        
     }
     for(i=0;i<9;i++){
+        if(i==3 || i==6)
+            array[10] = {0,0,0,0,0,0,0,0,0,0};
         for(j=3;j<6;j++){
             if(n->sudo[i][j]!=0){
                 if(array[n->sudo[i][j]]!=0)
@@ -105,10 +108,10 @@ int is_validSubmatrices(Node* n){
                     array[n->sudo[i][j]]=1;
                 }
         }
-        if(i==3 || i==6)
-            array = {0,0,0,0,0,0,0,0,0,0};
     }
     for(i=0;i<9;i++){
+        if(i==3 || i==6)
+            array[10] = {0,0,0,0,0,0,0,0,0,0};
         for(j=6;j<9;j++){
             if(n->sudo[i][j]!=0){
                 if(array[n->sudo[i][j]]!=0)
@@ -117,8 +120,6 @@ int is_validSubmatrices(Node* n){
                     array[n->sudo[i][j]]=1;
                 }
         }
-        if(i==3 || i==6)
-            array = {0,0,0,0,0,0,0,0,0,0};
     }
     return 1;
 }
