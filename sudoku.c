@@ -64,7 +64,7 @@ int is_validFilas(Node* n){
 }
 
 int is_validColumnas(Node* n){
-    int array[10]={0,0,0,0,0,0,0,0,0,0};
+    int array[10]={0};
     int i,j;
     for(i=0;i<9;i++){
         for(j=0;j<9;j++){
@@ -75,49 +75,29 @@ int is_validColumnas(Node* n){
                     array[n->sudo[j][i]]=1;
             }
         }
-        array[10]={0,0,0,0,0,0,0,0,0,0};
+        memset(array, 0, sizeof(array));
     }
     return 1;
 }
 
 int is_validSubmatrices(Node* n){
-    int array[10]={0,0,0,0,0,0,0,0,0,0};
+    int array[10]={0};
     int i,j;
-    for(i=0;i<9;i++){
-        if(i==3 || i==6)
-            array[10]={0,0,0,0,0,0,0,0,0,0};
-        for(j=0;j<3;j++){
-            if(n->sudo[i][j]!=0){
-                if(array[n->sudo[i][j]]!=0)
-                    return 0;
-                else
-                    array[n->sudo[i][j]]=1;
+    for(int fila =0; fila<9; fila+=3){
+        for(int col =0; col<9; col+=3){
+            memset(array, 0, sizeof(array))
+            for(i=fila;i<fila+3;i++){
+                for(j=col;j<col+3;j++){
+                    if(n->sudo[i][j]!=0){
+                        if(array[n->sudo[i][j]]!=0){
+                            return 0;
+                        }
+                        else{
+                            array[n->sudo[i][j]]=1;
+                        }
+                    }
                 }
-        }
-        
-    }
-    for(i=0;i<9;i++){
-        if(i==3 || i==6)
-            array[10]={0,0,0,0,0,0,0,0,0,0};
-        for(j=3;j<6;j++){
-            if(n->sudo[i][j]!=0){
-                if(array[n->sudo[i][j]]!=0)
-                    return 0;
-                else
-                    array[n->sudo[i][j]]=1;
-                }
-        }
-    }
-    for(i=0;i<9;i++){
-        if(i==3 || i==6)
-            array[10]={0,0,0,0,0,0,0,0,0,0};
-        for(j=6;j<9;j++){
-            if(n->sudo[i][j]!=0){
-                if(array[n->sudo[i][j]]!=0)
-                    return 0;
-                else
-                    array[n->sudo[i][j]]=1;
-                }
+            }
         }
     }
     return 1;

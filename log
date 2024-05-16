@@ -214,3 +214,23 @@ sudoku.c:113:23: error: expected expression before ‘{’ token
       |                       ^
 Compilation failed
 e770be4
+Thu 16 May 2024 05:11:15 PM UTC: 
+ sudoku.c | 40 ++++++++++------------------------------
+ 1 file changed, 10 insertions(+), 30 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_validSubmatrices’:
+sudoku.c:88:44: error: expected ‘;’ before ‘for’
+   88 |             memset(array, 0, sizeof(array))
+      |                                            ^
+      |                                            ;
+   89 |             for(i=fila;i<fila+3;i++){
+      |             ~~~                             
+sudoku.c:85:11: error: unused variable ‘j’ [-Werror=unused-variable]
+   85 |     int i,j;
+      |           ^
+sudoku.c:85:9: error: unused variable ‘i’ [-Werror=unused-variable]
+   85 |     int i,j;
+      |         ^
+cc1: all warnings being treated as errors
+Compilation failed
+c07bf20
