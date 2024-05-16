@@ -122,3 +122,27 @@ Thu 16 May 2024 04:37:03 PM UTC:
  tests:  2|4
 total_score: 15/70
 e5dd802
+Thu 16 May 2024 04:53:35 PM UTC: 
+ sudoku.c | 68 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 67 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_validFilas’:
+sudoku.c:60:19: error: expected expression before ‘{’ token
+   60 |         array[10]={0,0,0,0,0,0,0,0,0,0};
+      |                   ^
+sudoku.c: In function ‘is_validColumnas’:
+sudoku.c:79:19: error: expected expression before ‘{’ token
+   79 |         array[10]={0,0,0,0,0,0,0,0,0,0};
+      |                   ^
+sudoku.c: In function ‘is_validSubmatrices’:
+sudoku.c:97:21: error: expected expression before ‘{’ token
+   97 |             array = {0,0,0,0,0,0,0,0,0,0};
+      |                     ^
+sudoku.c:109:21: error: expected expression before ‘{’ token
+  109 |             array = {0,0,0,0,0,0,0,0,0,0};
+      |                     ^
+sudoku.c:121:21: error: expected expression before ‘{’ token
+  121 |             array = {0,0,0,0,0,0,0,0,0,0};
+      |                     ^
+Compilation failed
+94be953

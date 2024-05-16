@@ -43,7 +43,7 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+int is_validFilas(Node* n){
     int array[10]={0,0,0,0,0,0,0,0,0,0};
     int i,j;
     for(i=0;i<9;i++){
@@ -57,8 +57,74 @@ int is_valid(Node* n){
                 }
             }
         }
+        array[10]={0,0,0,0,0,0,0,0,0,0};
     }
     return 1;
+}
+
+int is_validColumnas(Node* n){
+    int array[10]={0,0,0,0,0,0,0,0,0,0};
+    int i,j;
+    for(i=0;i<9;i++){
+        for(j=0;j<9;j++){
+            if(n->sudo[j][i]!=0){
+                if(array[n->sudo[j][i]]!=0){
+                    return 0;
+                }
+                else{
+                    array[n->sudo[j][i]]=1;
+                }
+            }
+        }
+        array[10]={0,0,0,0,0,0,0,0,0,0};
+    }
+    return 1;
+}
+
+int is_validSubmatrices(Node* n){
+    int array[10]={0,0,0,0,0,0,0,0,0,0};
+    int i,j;
+    for(i=0;i<9;i++){
+        for(j=0;j<3;j++){
+            if(n->sudo[i][j]!=0){
+                if(array[n->sudo[i][j]]!=0)
+                    return 0;
+                else
+                    array[n->sudo[i][j]]=1;
+                }
+        }
+        if(i==3 || i==6)
+            array = {0,0,0,0,0,0,0,0,0,0};
+    }
+    for(i=0;i<9;i++){
+        for(j=3;j<6;j++){
+            if(n->sudo[i][j]!=0){
+                if(array[n->sudo[i][j]]!=0)
+                    return 0;
+                else
+                    array[n->sudo[i][j]]=1;
+                }
+        }
+        if(i==3 || i==6)
+            array = {0,0,0,0,0,0,0,0,0,0};
+    }
+    for(i=0;i<9;i++){
+        for(j=6;j<9;j++){
+            if(n->sudo[i][j]!=0){
+                if(array[n->sudo[i][j]]!=0)
+                    return 0;
+                else
+                    array[n->sudo[i][j]]=1;
+                }
+        }
+        if(i==3 || i==6)
+            array = {0,0,0,0,0,0,0,0,0,0};
+    }
+    return 1;
+}
+
+int is_valid(Node* n){
+    return is_validFilas(n) && is_validColumnas(n) && is_validSubmatrices(n);
 }
 
 
