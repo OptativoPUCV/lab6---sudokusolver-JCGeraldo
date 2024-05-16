@@ -240,3 +240,15 @@ Thu 16 May 2024 05:11:33 PM UTC:
  tests:  5|3
 total_score: 35/70
 c7c63b6
+Thu 16 May 2024 05:13:15 PM UTC: 
+ sudoku.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:130:13: error: implicit declaration of function ‘isValid’; did you mean ‘is_valid’? [-Werror=implicit-function-declaration]
+  130 |          if(isValid(adj))
+      |             ^~~~~~~
+      |             is_valid
+cc1: all warnings being treated as errors
+Compilation failed
+4cb1a3b

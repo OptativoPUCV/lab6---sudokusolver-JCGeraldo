@@ -89,12 +89,10 @@ int is_validSubmatrices(Node* n){
             for(i=fila;i<fila+3;i++){
                 for(j=col;j<col+3;j++){
                     if(n->sudo[i][j]!=0){
-                        if(array[n->sudo[i][j]]!=0){
+                        if(array[n->sudo[i][j]]!=0)
                             return 0;
-                        }
-                        else{
+                        else
                             array[n->sudo[i][j]]=1;
-                        }
                     }
                 }
             }
@@ -129,7 +127,8 @@ List* get_adj_nodes(Node* n){
       for(int k = 1; k <= 9; k++){
          Node* adj = copy(n);
          adj->sudo[i0][j0] = k;
-         pushBack(list, adj);
+         if(isValid(adj))
+            pushBack(list, adj);
       }
    }
    return list;
