@@ -57,7 +57,7 @@ int is_validFilas(Node* n){
                 }
             }
         }
-        array[10]={0,0,0,0,0,0,0,0,0,0};
+        array= {0,0,0,0,0,0,0,0,0,0};
     }
     return 1;
 }
