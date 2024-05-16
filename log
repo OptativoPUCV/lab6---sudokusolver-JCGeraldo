@@ -194,3 +194,23 @@ sudoku.c:114:25: error: expected expression before ‘{’ token
       |                         ^
 Compilation failed
 b3785fc
+Thu 16 May 2024 05:09:16 PM UTC: 
+ sudoku.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_validColumnas’:
+sudoku.c:78:19: error: expected expression before ‘{’ token
+   78 |         array[10]={0,0,0,0,0,0,0,0,0,0};
+      |                   ^
+sudoku.c: In function ‘is_validSubmatrices’:
+sudoku.c:88:23: error: expected expression before ‘{’ token
+   88 |             array[10]={0,0,0,0,0,0,0,0,0,0};
+      |                       ^
+sudoku.c:101:23: error: expected expression before ‘{’ token
+  101 |             array[10]={0,0,0,0,0,0,0,0,0,0};
+      |                       ^
+sudoku.c:113:23: error: expected expression before ‘{’ token
+  113 |             array[10]={0,0,0,0,0,0,0,0,0,0};
+      |                       ^
+Compilation failed
+e770be4
